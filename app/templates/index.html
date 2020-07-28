@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+{% if current_user.is_authenticated %}
+
+<h1> Hi</h1>
+{% else %}
+Please <a href="{{ url_for('login') }}"> login </a> to see the pics.
+{% endif %}
+
+<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+{% endblock %}
